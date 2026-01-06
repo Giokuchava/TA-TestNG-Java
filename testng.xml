@@ -7,9 +7,9 @@
 
         <classes>
 
-            <class name="tests.FormTests"/>
+            <class name="form.FormTests"/>
 
-            <class name="tests.AlertTests"/>
+            <class name="alert.AlertTests"/>
 
         </classes>
 
