@@ -47,24 +47,24 @@ public class PracticeFormPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        // Open date picker
+
         WebElement dateInput = wait.until(
                 ExpectedConditions.elementToBeClickable(By.id("dateOfBirthInput")));
         js.executeScript("arguments[0].click();", dateInput);
 
-        // Select month
+
         WebElement monthSelect = wait.until(
                 ExpectedConditions.visibilityOfElementLocated(
                         By.className("react-datepicker__month-select")));
         new Select(monthSelect).selectByVisibleText(month);
 
-        // Select year
+
         WebElement yearSelect = wait.until(
                 ExpectedConditions.visibilityOfElementLocated(
                         By.className("react-datepicker__year-select")));
         new Select(yearSelect).selectByVisibleText(year);
 
-        // Select day using aria-label (MOST RELIABLE)
+
         WebElement dayElement = wait.until(
                 ExpectedConditions.presenceOfElementLocated(
                         By.xpath("//div[contains(@aria-label,'" + day + "')]")
@@ -90,7 +90,7 @@ public class PracticeFormPage extends BasePage {
     public void selectStateAndCity(String state, String city) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        // STATE
+
         WebElement stateDropdown = wait.until(
                 ExpectedConditions.elementToBeClickable(By.id("state"))
         );
@@ -102,7 +102,7 @@ public class PracticeFormPage extends BasePage {
         stateInput.sendKeys(state);
         stateInput.sendKeys(Keys.ENTER);
 
-        // CITY
+
         WebElement cityDropdown = wait.until(
                 ExpectedConditions.elementToBeClickable(By.id("city"))
         );

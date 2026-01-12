@@ -22,7 +22,7 @@ public class DriverFactory {
 
         SafariOptions options = new SafariOptions();
         options.setCapability("safari:usePrivateBrowsing", true);
-        driver = new SafariDriver();
+        driver = new ChromeDriver();
 
         driver.manage().window().maximize();
 
